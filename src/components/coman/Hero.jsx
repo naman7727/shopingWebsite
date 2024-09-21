@@ -5,8 +5,8 @@
 // /* eslint-disable no-unused-vars */
 
 
-import image1 from '../../assets/about-1.jpg'
-// import image2 from '../../assets/bg.jpg'
+// import image1 from '../../assets/about-1.jpg'
+import image1 from '../../assets/fashion.jpg'
 // import image3 from '../../assets/maxresdefault.jpg'
 // import image4 from '../../assets/img-3.jpeg'
 // import image5 from '../../assets/unnamed.jpg'
@@ -102,48 +102,25 @@ const HeroSection = () => {
     duration: 4000,
     transitionDuration: 500,
     infinite: true,
-    indicators: true,
+    // indicators: true,
     scale: 0.4,
     arrows: true,
   };
 
-  const sliderData = [
-    {
-      icon: "../../assets/about-1.jpg",
-      text: "Oral Examinations",
-    },
-    {
-      icon: "../../assets/about-1.jpg",
-      text: "Braces & Bonding",
-    },
-    {
-      icon: "../../assets/about-1.jpg",
-      text: "Dentures & Repairs",
-    },
-    {
-      icon: "../../assets/about-1.jpg",
-      text: "Root Canals",
-    },
-    {
-      icon: "../../assets/about-1.jpg",
-      text: "Crowns and Caps",
-    },
-    {
-      icon: "../../assets/about-1.jpg",
-      text: "Extractions &  Gum Surgery",
-    },
-  ];
+  
 
   return (
-       <div className=''>
+       <div className=' flax w-[100vw] h-[100vh]'>
          <Slide {...zoomOutProperties}>
       <div className="each-slide-effect">
         <div
-          className="relative  h-[100vh] w-screen"
+        className='relative  h-[100vh] w-[100vw] bg-cover'
             style={{
               backgroundImage: `url(${images[0]})`,
+              
               backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
+              backgroundPosition: "center",
+              // backgroundSize:"cover",
               backgroundAttachment: "fixed",
             }}
         >
@@ -153,29 +130,32 @@ const HeroSection = () => {
 
       <div className="each-slide-effect">
         <div
-          className="relative  h-[100vh] w-[100%] "
-          style={{
-            backgroundImage: `url(${images[1]})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundAttachment: "fixed",
-          }}
+        className='relative  h-[100vh] w-[100%] bg-cover'
+            style={{
+              backgroundImage: `url(${images[1]})`,
+              
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+        
+              backgroundAttachment: "fixed",
+            }}
         >
           
         </div>
       </div>
       <div className="each-slide-effect">
         <div
-          style={{
-            backgroundImage: `url(${images[2]})`,
-            height: "100vh",
-            width: "100%",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundAttachment: "fixed",
-          }}
+        className='relative  h-[100vh] w-[100%] bg-cover'
+            style={{
+              backgroundImage: `url(${images[2]})`,
+              
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+        
+              backgroundAttachment: "fixed",
+            }}
         >
-          <span>Slide 1</span>
+          
         </div>
       </div>
     </Slide>
