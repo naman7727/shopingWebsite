@@ -11,6 +11,7 @@ import image6 from '../../../assets/card-6.jfif'
 import image7 from '../../../assets/card-7.jfif'
 import image8 from '../../../assets/card-8.jfif'
 import image9 from '../../../assets/card-9.jfif'
+import { Link } from "react-router-dom";
 
 
 function Cards() {
@@ -94,7 +95,7 @@ function Cards() {
           </div>
          
         </div>
-         <div className="flex justify-center py-4"> <button className="border-2 p-4 flex justify-center bg-blue-400"><a href="#">See More</a></button></div>
+         <div className="flex justify-center py-4"> <Link to={"about"} className="border-2 p-4 flex justify-center bg-blue-400">See More </Link></div>
     </div>
   );
 }

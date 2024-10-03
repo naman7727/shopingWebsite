@@ -29,7 +29,7 @@ const Navbar = () => {
     <nav className="bg-gray-800 p-4 fixed z-[9999]  w-full ">
       <div className="container mx-auto flex justify-between items-center ">
         <div className="text-white text-2xl font-bold">
-          <a href="#">Logo</a>
+          <Link>Logo</Link>
         </div>
         <div className="hidden xl:flex md:flex space-x-6">
           <ul className="gap-x-4 md:flex xl:flex flex-row text-white font-bold  items-center justify-between  xs:hidden sm:hidden " >
@@ -61,9 +61,9 @@ const Navbar = () => {
        
         <div className="hidden xl:flex md:flex items-center space-x-2">
         <VscAccount size={20} color="#FFFFFF" />
-          <a href="#" className="text-white hover:text-gray-300 pr-2">Login</a>
+          <Link to="login" className="text-white hover:text-gray-300 pr-2">Login</Link>
           <BsCart3 size={20} color="#FFFFFF" />
-          <a href="#" className="text-white hover:text-gray-300">Cart</a>
+          <Link to="cart" className="text-white hover:text-gray-300">Cart</Link>
         </div>
 
    
@@ -90,7 +90,7 @@ const Navbar = () => {
 
       {isOpen && (
         <div className= "md:hidden xl:hidden flex flex-col items-start p-4 space-y-4">
-         <ul className="gap-5 p-1.5 flex xl:hidden font-bold text-black flex-col md:hidden mt-4 items-center  justify-center  w-full">
+         <ul className="gap-5 p-1.5 flex xl:hidden font-bold text-white flex-col md:hidden mt-4 items-center  justify-center  w-full">
                                     {
                                         links.map((link, index) => {
                                             return (
@@ -103,9 +103,9 @@ const Navbar = () => {
                                 </ul>
           <div className="flex ">
           <VscAccount size={20} color="#FFFFFF"/>
-            <a href="#" className="text-white hover:text-gray-300 pr-4 pl-2">Login</a>
+            <Link to={"login"} className="text-white hover:text-gray-300 pr-4 pl-2">Login</Link>
             <BsCart3 size={20} color="#FFFFFF"/>
-            <a href="#" className="text-white hover:text-gray-300 pl-2 ">Cart</a>
+            <Link to={"cart"} className="text-white hover:text-gray-300 pl-2 ">Cart</Link>
           </div>
         </div>
       )}
