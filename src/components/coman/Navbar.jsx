@@ -90,7 +90,7 @@ const Navbar = () => {
 
       {isOpen && (
         <div className= "md:hidden xl:hidden flex flex-col items-start p-4 space-y-4">
-         <ul className="gap-5 p-1.5 flex xl:hidden font-bold text-black flex-col md:hidden mt-4 items-center  justify-center  w-full">
+         <ul className="gap-5 p-1.5 flex xl:hidden font-bold text-white flex-col md:hidden mt-4 items-center  justify-center  w-full">
                                     {
                                         links.map((link, index) => {
                                             return (
