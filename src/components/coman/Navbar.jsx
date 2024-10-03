@@ -1,17 +1,30 @@
 /* eslint-disable no-unused-vars */
-// import { FaSearch } from "react-icons/fa";
 import { VscAccount } from "react-icons/vsc";
 import { BsCart3 } from "react-icons/bs";
-
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
+import { links } from "../../links";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [open, setOpen] = useState(false)
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const [scrollY, setScrollY] = useState(false);
 
+  window.addEventListener('scroll', function () {
+      let scrollPosition = window.scrollY;
+      if (scrollPosition >= 100) {
+          setScrollY(true)
+      } else {
+          setScrollY(false)
+      }
+  });
+
+  const handleOnclick = () => {
+      window.scrollTo(0, 0);
+      setOpen(!open)
+  }
   return (
     <nav className="bg-gray-800 p-4 fixed z-[9999]  w-full ">
       <div className="container mx-auto flex justify-between items-center ">
@@ -19,11 +32,18 @@ const Navbar = () => {
           <a href="#">Logo</a>
         </div>
         <div className="hidden xl:flex md:flex space-x-6">
-          <a href="#" className="text-white font-bold hover:text-gray-300">Shop</a>
-          <a href="#" className="text-white font-bold hover:text-gray-300">About</a>
-          <a href="#" className="text-white font-bold hover:text-gray-300">FAQ</a>
-          <a href="#" className="text-white font-bold hover:text-gray-300">Gift Card</a>
-          <a href="#" className="text-white font-bold hover:text-gray-300">Contact</a>
+          <ul className="gap-x-4 md:flex xl:flex flex-row text-white font-bold  items-center justify-between  xs:hidden sm:hidden " >
+          {
+                                links.map((link, index) => {
+                                    return (
+                                        <li key={index} className="uppercase" onClick={() => window.scrollTo(0, 0)} >
+                                            <Link to={link.path} >{link.name}</Link>
+                                        </li>
+                                    )
+                                })
+                            }
+          </ul>
+
         </div>
 
        
@@ -70,11 +90,17 @@ const Navbar = () => {
 
       {isOpen && (
         <div className= "md:hidden xl:hidden flex flex-col items-start p-4 space-y-4">
-          <a href="#" className="text-white hover:text-gray-300">Shop</a>
-          <a href="#" className="text-white hover:text-gray-300">About</a>
-          <a href="#" className="text-white hover:text-gray-300">FAQ</a>
-          <a href="#" className="text-white hover:text-gray-300">Gift Card</a>
-          <a href="#" className="text-white hover:text-gray-300">Contact</a>
+         <ul className="gap-5 p-1.5 flex xl:hidden font-bold text-black flex-col md:hidden mt-4 items-center  justify-center  w-full">
+                                    {
+                                        links.map((link, index) => {
+                                            return (
+                                                <li key={index} className="uppercase" onClick={handleOnclick}>
+                                                    <Link to={link.path} >{link.name}</Link>
+                                                </li>
+                                            )
+                                        })
+                                    }
+                                </ul>
           <div className="flex ">
           <VscAccount size={20} color="#FFFFFF"/>
             <a href="#" className="text-white hover:text-gray-300 pr-4 pl-2">Login</a>
